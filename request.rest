@@ -1,0 +1,35 @@
+
+### Endpoints Testing 
+
+
+## Get all Users
+GET http://localhost:3100/users
+
+
+### Get user by Id
+GET http://localhost:3100/users/6408f31b705df37835aa3fa3
+
+
+### create a new User
+POST http://localhost:3100/users
+Content-Type: "application/json"
+
+    {
+    "name" : "test1",
+    "email" : "testing1@iom.com",
+    "password" : "12334"
+}
+
+### update an User
+PATCH http://localhost:3100/users/6408f31b705df37835aa3fa3
+Content-Type: "application/json"
+
+    {
+    "name" : "updatedUser",
+    "email" : "IamAbUpdatedUser@iom.com",
+    "password" : "12334"
+    }
+
+### delete an User
+
+DELETE http://localhost:3100/users/6408ed7328fdb0fb6de84635
