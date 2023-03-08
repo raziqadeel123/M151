@@ -7,6 +7,7 @@ import cors from "cors"
 import session from "express-session"
 import dotenv from "dotenv"
 import Database from "./config/Database.js"
+import UserRoute from "./routes/UserRoute.js"
 
 
 /*----------------------------------------------------------------------------*/
@@ -32,14 +33,16 @@ app.use(session({
         secure : "auto"
     }
 }))
-
+/*
 // middlewares
 app.use(cors({
     credentials : true,
     origin: "http://localhost:3000"
 }))
+*/
 
 app.use(express.json())
+app.use(UserRoute);
 
 app.listen(port, ()=>{
     console.log(`Server up and running on ${port}`)
