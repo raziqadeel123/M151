@@ -21,6 +21,18 @@ export const getUsers = async (req, res)=>{
     }
 }
 
+// get User By Id
+
+export const getUserById = async(req, res) =>{
+    try {
+        const user = await User.findById(req.params.id)
+        res.json(user)
+    } catch (error) {
+        res.status(400).json({message : error.message})
+    }
+}
+
+
 // add a new user / save the user in table
 
 export const saveUser =async(req, res) =>{
